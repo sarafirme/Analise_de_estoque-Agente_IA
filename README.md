@@ -14,7 +14,7 @@ E aí? 👋
 1.  **Clone esse repositório camarada:**
 
     ```bash
-    git clone [coloque o link do seu repositório aqui]
+    git clone [(https://github.com/sarafirme/Analise_de_estoque-Agente_IA.git)]
     cd Analise_de_estoque-Agente_IA
     ```
 
