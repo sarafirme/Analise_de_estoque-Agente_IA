@@ -50,7 +50,6 @@ O modelo Gemini processa esses dados e retorna insights sobre os produtos com **
 Este projeto simplifica a gestão de estoque ao fornecer uma visão clara dos produtos que requerem atenção imediata devido à proximidade da data de validade. ✅
 
     * Abra o arquivo `AnaliseValidade.py`.
-    * Na seção `if __name__ == "__main__":`, você vai encontrar um exemplo de como os dados precisam ser formatados na variável `dados`.
     * **Mande bala e coloque os SEUS dados de validade ali!** Pode ser de um arquivo, de uma planilha, do jeito que você preferir. Garanta que a estrutura seja parecida (Produto, Lote, Validade, Estoque).
 
 **Pronto! Agora você tem um agente IA trabalhando duro para manter seu estoque nos trinques!** 😎
