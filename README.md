@@ -1,47 +1,53 @@
-# 🤖 Análise de Estoque com Agente IA 🕵️‍♀️
+# 🤖 Análise Inteligente de Validade de Estoque ⏳
 
-E aí? 👋
+Este projeto utiliza inteligência artificial (Google Gemini) para simplificar a análise de datas de validade de produtos. Ele permite identificar rapidamente itens **próximos ao vencimento** ⚠️ ou com **grande quantidade em estoque prestes a vencer** 📦, auxiliando na tomada de decisões para evitar perdas 📉.
 
-**Em resumo, essa belezinha faz o seguinte:**
+## ✨ Como Funciona ✨
 
-* **Mastiga seus dados de validade:** Você joga as informações de lote, validade e estoque, e ele processa tudo rapidinho.
-* **Liga o alerta de "perigo":** Identifica os produtos que estão quase dando o "tchau" (vencendo em breve).
-* **Faz as contas:** Cruza os dados de validade com a quantidade em estoque para você não ter um caminhão de produtos prestes a vencer.
-* **Te entrega o ouro:** Apresenta uma análise clara e concisa, mostrando os produtos críticos e os insights mais importantes.
+O script `AnaliseValidade.py` pode analisar dados de duas maneiras:
 
-**Como botar essa mágica pra funcionar? É mais fácil que receita de miojo! 🍜**
+1.  **Arquivo Excel (`Produtos_Teste.xlsx`):** Lendo diretamente os dados de uma planilha com colunas "PRODUTO", "LOTE", "VALIDADE" (formato AAAA-MM-DD) e "ESTOQUE". 📊
+2.  **Dados no Código:** (Opção comentada no script) Permite inserir dados de produtos diretamente na forma de texto. 📝
 
-1.  **Clone esse repositório camarada:**
+O modelo Gemini processa esses dados e retorna insights sobre os produtos com **maior risco de perda por validade** 💡.
 
+## 🚀 Utilização 🚀
+
+1.  **Clone o Repositório:**
     ```bash
-    git clone https://github.com/sarafirme/Analise_de_estoque-Agente_IA.git
+    git clone [https://github.com/sarafirme/Analise_de_estoque-Agente_IA.git](https://github.com/sarafirme/Analise_de_estoque-Agente_IA.git)
     cd Analise_de_estoque-Agente_IA
     ```
 
-2.  **Crie o arquivo secreto `.env`:**
-
-    * Na raiz do projeto, crie um arquivo chamado `.env`.
-    * Dentro dele, coloque a sua chave da API do Google Gemini, assim:
-
+2.  **⚙️ Configure a Chave de API 🔑:**
+    * Crie um arquivo `.env` e adicione sua chave do Google AI:
         ```
-        GOOGLE_API_KEY=SUA_CHAVE_SECRETA_AQUI
+        GOOGLE_API_KEY=SUA_CHAVE_DE_API
+        ```
+    * *(Você pode criar um arquivo `.env` com base no `.env.sample` fornecido).*
+
+3.  **⬇️ Instale as Dependências ⬇️:**
+    no terminal digite o comando:
+   `pip install google-generativeai python-dotenv pandas openpyxl`
+
+4.  **📊 Execute a Análise (com arquivo Excel) 📈:**
+    * Certifique-se de que o arquivo `Produtos_Teste.xlsx` esteja na mesma pasta.
+    * Execute o script:
+        ```bash
+        python AnaliseValidade.py
         ```
 
-    * **Importante:** Essa chave é como a senha do cofre, guarde com carinho e não compartilhe com estranhos, beleza? 😉
+5.  **🔍 Visualize os Resultados 👀:** A análise será exibida no terminal.
 
-3.  **Instale o necessário:**
+## 📂 Arquivos Principais 📂
 
-    *Por enquanto o script só precisa das bibliotecas `google-generativeai` e `python-dotenv`. Se não tiver instalado, rode um `pip install google-generativeai python-dotenv`)*
+* `.env.sample`: Exemplo de como configurar as variáveis de ambiente.
+* `.gitignore`: Especifica arquivos que o Git deve ignorar.
+* `AnaliseValidade.py`: O script Python principal para realizar a análise.
+* `Produtos_Teste.xlsx`: Arquivo de exemplo com os dados dos produtos.
+* `README.md`: Este arquivo com a descrição do projeto. 📄
 
-4.  **Rode o projeto**
-
-    ```bash
-    python AnaliseValidade.py
-    ```
-
-    Ele vai pegar os dados de exemplo que já estão no código e te mostrar a análise.
-
-5.  **Adapte para os SEUS dados:**
+Este projeto simplifica a gestão de estoque ao fornecer uma visão clara dos produtos que requerem atenção imediata devido à proximidade da data de validade. ✅
 
     * Abra o arquivo `AnaliseValidade.py`.
     * Na seção `if __name__ == "__main__":`, você vai encontrar um exemplo de como os dados precisam ser formatados na variável `dados`.
